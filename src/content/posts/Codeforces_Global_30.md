@@ -3,8 +3,8 @@ title: Codeforces_Global_30
 published: 2025-12-19
 description: ''
 image: ''
-tags: []
-category: ''
+tags: [acm, codeforces]
+category: 'codeforces'
 draft: false 
 lang: ''
 ---
