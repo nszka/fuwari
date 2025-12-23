@@ -1,0 +1,68 @@
+---
+import { profileConfig } from "../config";
+import { Icon } from "astro-icon/components";
+import { url } from "../utils/url-utils";
+import ImageWrapper from "./misc/ImageWrapper.astro";
+
+const config = profileConfig;
+---
+<div class="profile-content">
+    <!-- 个人信息头部 -->
+    <div class="flex flex-col lg:flex-row items-center gap-6 mb-8">
+        <!-- 头像 -->
+        <div class="relative">
+            <ImageWrapper 
+                src={config.avatar || ""} 
+                alt="Profile Image of the Author" 
+                class="rounded-2xl w-48 h-48 object-cover"
+            ></ImageWrapper>
+        </div>
+        
+        <!-- 基本信息 -->
+        <div class="text-center lg:text-left">
+            <h1 class="text-4xl font-bold mb-2 dark:text-white">{config.name}</h1>
+            <div class="h-1 w-16 bg-[var(--primary)] mx-auto lg:mx-0 rounded-full mb-4"></div>
+            <p class="text-xl text-neutral-600 dark:text-neutral-300 mb-6">{config.bio}</p>
+            
+            <!-- 社交链接 -->
+            <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+                {config.links.map(item => 
+                    <a 
+                        rel="me" 
+                        aria-label={item.name} 
+                        href={item.url} 
+                        target="_blank" 
+                        class="btn-regular rounded-lg px-4 py-2 gap-2 active:scale-95"
+                    >
+                        <Icon name={item.icon} class="text-[1.25rem]"></Icon>
+                        {item.name}
+                    </a>
+                )}
+            </div>
+        </div>
+    </div>
+    
+    <!-- 个人简介 -->
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+        <p>欢迎访问我的个人主页！我是一名热爱技术的开发者，专注于分享我的学习经验、项目实践和技术思考。</p>
+        
+        <h2>关于我</h2>
+        <p>我在编程和技术领域拥有丰富的经验，尤其擅长以下方面：</p>
+        <ul>
+            <li>Web开发（前端/后端）</li>
+            <li>算法与数据结构</li>
+            <li>开源项目贡献</li>
+        </ul>
+        
+        <h2>我的博客</h2>
+        <p>这个博客是我分享知识和经验的平台，主要包含以下内容：</p>
+        <ul>
+            <li>技术教程和指南</li>
+            <li>编程技巧和最佳实践</li>
+            <li>项目经验分享</li>
+            <li>算法题解和竞赛经验</li>
+        </ul>
+        
+        <p>感谢您的访问，希望您能在这里找到有价值的内容！</p>
+    </div>
+</div>

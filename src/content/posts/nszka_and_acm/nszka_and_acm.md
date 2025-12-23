@@ -3,7 +3,7 @@ title: nszka_and_acm
 published: 2025-12-19
 description: ''
 image: ''
-tags: 【acm]
+tags: [acm，nszka]
 category: 'acm'
 draft: false 
 lang: ''

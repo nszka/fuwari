@@ -1,5 +1,5 @@
 ---
-title: nszkay_2
+title: 冒泡排序
 published: 2025-12-18
 description: ''
 image: ''
